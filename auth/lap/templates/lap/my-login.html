@@ -1,0 +1,26 @@
+<!-- <html>
+    <h1>This is Login Page</h1>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ loginForm.as_p }}
+        <input type="submit" value="Login">
+    </form>
+</html>
+ -->
+
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login_styles.css' %}">
+    </head>
+    <body style="display: flex; flex-direction: column; justify-content: flex-start;">
+        <h1 style="margin: 4rem; padding: 25px; background-color: black; color: white; border-top-right-radius: 30px;">This is Login Page</h1>
+        <form method="POST" autocomplete="off" style="box-shadow: inset;">
+            {% csrf_token %}
+            {{ loginForm.as_p }}
+            <input type="submit" value="Login">
+            
+        </form>
+        <a href="{% url 'register' %}" style="text-decoration: none; padding: 10px; background-color: 4caf50; border: 4px; color: white;">Register</a>
+    </body>
+</html>

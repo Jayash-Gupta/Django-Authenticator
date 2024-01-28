@@ -1,0 +1,30 @@
+<!-- <html>
+    <div>
+    <h1>This is Register Page</h1>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ registerForm.as_p }}
+        <input type="submit" value="Register">
+    </form>
+</div>
+</html> -->
+
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    </head>
+    <body style="background-color:darkgrey;">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 style="margin: 4rem; padding: 25px; background-color: black; color: white; border-top-right-radius: 30px;">This is Register Page</h1>
+           
+            <form method="POST" autocomplete="off" style="background-color: white; color: black; padding: 50px; border-radius: 25px; font-size: medium;">
+                {% csrf_token %}
+                {{ registerForm.as_p }}
+                <input type="submit" value="Register">
+                <a href="{% url 'my-login' %}" style="text-decoration: none; padding: 10px; background-color:#4caf50 ; color: white; border: none; border-radius: 4px;cursor: pointer; font-size: small;">Login</a>
+            </form>
+        </div>
+    </body>
+</html>
